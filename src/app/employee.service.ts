@@ -2,17 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Employee } from './employee';
+import { enviroment } from './enviroments/enviroment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class EmployeeService {
-    private apiServerUrl = '';
+    private apiServerUrl = enviroment.apiBaseUrl;
 
     constructor(private http: HttpClient) { }
 
-    public getEmployees(): Observable<Employee> {
-        return this.http.get<Employee>(`${this.apiServerUrl}/employee`)
+    public getEmployees(): Observable<Employee[]> {
+        return this.http.get<Employee[]>(`${this.apiServerUrl}/employee`)
     }
 
     public addEmployee(employee: Employee): Observable<Employee> {
