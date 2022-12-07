@@ -42,8 +42,13 @@ export class AppComponent {
       || employee.phone.toLowerCase().indexOf(key.toLowerCase()) !== -1
       || employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) !== -1
         ){
-        results.push(employee)
+        results.push(employee);
       }
+    }
+    this.employees = results;
+    if(results.length===0 || !key)
+    {
+
     }
   }
 

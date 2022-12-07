@@ -13,6 +13,11 @@
                         <li class="nav-item">
                             <a aria-current="page" href="#" class="router-link-active router-link-exact-active nav-link active" data-bs-toggle="tooltip" data-bs-placement="top" title="Grid"><i class="bx bx-grid-alt"></i></a>
                         </li>
+                        <li>
+                            <form class="form-inline my-2 mylg-0">
+                                <input (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel type="search" name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees...">
+                            </form>
+                        </li>
                     </ul>
                 </div>
                 <div>
